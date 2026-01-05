@@ -5,6 +5,10 @@ var profile = {
         first: "Enrique Alberto",
         last: " Fonseca Porras",
         title: "Digital creator",
+        portrait: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr46LSrseVkgSX9CO9XY2xyRX_DLNVrroVMw&s",
+        email: "Unknown",
+        phone: "Unknown",
+        address: "Unknown",
         about: "Enrique A. Fonseca Porras is a Spanish journalist, political and economic analyst, and digital media creator. He is best known as the co-founder and former presenter of VisualPolitik, a widely influential Spanish-language YouTube channel that explains global politics and economics to mass audiences. Trained in journalism, Fonseca also worked earlier as a political marketing consultant, gaining firsthand experience in electoral communication and strategy.<br>After leaving VisualPolitik in 2023 due to internal differences, he launched his independent channel Solo Fonseca, where he continues producing political commentary and analysis with a more personal and direct style. He has also co-authored the book El método Podemos (2015), analyzing modern political marketing. Today, Fonseca is recognized as one of the most prominent Spanish-speaking political communicators on digital platforms."
     }, 
 
@@ -12,7 +16,7 @@ var profile = {
         { facebook: "https://www.facebook.com/fonseca"},
         { X: "https://x.com/Sr_Fonseca" },
         { youtube: "https://www.youtube.com/channel/UCTqb7oZzCYpzOhPenq6AOyQ" },
-        { linkedIn: "" }
+        { linkedIn: "Unknown" }
     ],
     edu: {
         name: "University of Valladolid",
@@ -31,5 +35,30 @@ var profile = {
     ]
 };
 
+let Profile_IMG_DOM = document.querySelector("#Profile_IMG");
+let Profile_Name_DOM = document.querySelector("#Profile_Name");
+let Profile_Title_DOM = document.querySelector("#Profile_Title");
 
-//https://static.wikia.nocookie.net/youtubepedia/images/1/1e/Solo_Fonseca.jpg/revision/latest?cb=20240317013018&path-prefix=es
+let Profile_Email_DOM = document.querySelector("#Profile_Email");
+let Profile_Phone_DOM = document.querySelector("#Profile_Phone");
+let Profile_Address_DOM = document.querySelector("#Profile_Address");
+
+let Profile_Facebook_DOM = document.querySelector("#Profile_Facebook");
+let Profile_Twitter_DOM = document.querySelector("#Profile_Twitter");
+let Profile_Youtube_DOM = document.querySelector("#Profile_Youtube");
+let Profile_Linkedin_DOM = document.querySelector("#Profile_Linkedin");
+
+function Update(){
+    Profile_IMG_DOM.src = profile.bio.portrait;
+    Profile_Name_DOM.innerHTML = `${profile.bio.first} ${profile.bio.last}`;
+    Profile_Email_DOM.innerHTML = profile.bio.email;
+    Profile_Phone_DOM.innerHTML = `<i class="fas fa-mobile-alt display-25 me-3 text-secondary"></i>${profile.bio.phone}`;
+    Profile_Address_DOM.innerHTML = `<i class="fas fa-map-marker-alt display-25 me-3 text-secondary"></i>${profile.bio.address}`;
+
+    Profile_Facebook_DOM.href = social.bio.facebook;
+    Profile_Twitter_DOM.href = social.bio.X;
+    Profile_Youtube_DOM.href = social.bio.youtube;
+    Profile_Linkedin_DOM.href = social.bio.linkedIn;
+}
+
+Update();
