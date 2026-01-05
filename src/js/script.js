@@ -9,7 +9,7 @@ var profile = {
         email: "Unknown",
         phone: "Unknown",
         address: "Unknown",
-        about: "Enrique A. Fonseca Porras is a Spanish journalist, political and economic analyst, and digital media creator. He is best known as the co-founder and former presenter of VisualPolitik, a widely influential Spanish-language YouTube channel that explains global politics and economics to mass audiences. Trained in journalism, Fonseca also worked earlier as a political marketing consultant, gaining firsthand experience in electoral communication and strategy.<br>After leaving VisualPolitik in 2023 due to internal differences, he launched his independent channel Solo Fonseca, where he continues producing political commentary and analysis with a more personal and direct style. He has also co-authored the book El método Podemos (2015), analyzing modern political marketing. Today, Fonseca is recognized as one of the most prominent Spanish-speaking political communicators on digital platforms."
+        about: `<p>Enrique A. Fonseca Porras is a Spanish journalist, political and economic analyst, and digital media creator. He is best known as the co-founder and former presenter of VisualPolitik, a widely influential Spanish-language YouTube channel that explains global politics and economics to mass audiences. Trained in journalism, Fonseca also worked earlier as a political marketing consultant, gaining firsthand experience in electoral communication and strategy.</p><p>After leaving VisualPolitik in 2023 due to internal differences, he launched his independent channel Solo Fonseca, where he continues producing political commentary and analysis with a more personal and direct style. He has also co-authored the book El método Podemos (2015), analyzing modern political marketing. Today, Fonseca is recognized as one of the most prominent Spanish-speaking political communicators on digital platforms.</p>`
     }, 
 
     social: {
@@ -48,6 +48,8 @@ let Profile_Twitter_DOM = document.querySelector("#Profile_Twitter");
 let Profile_Youtube_DOM = document.querySelector("#Profile_Youtube");
 let Profile_Linkedin_DOM = document.querySelector("#Profile_Linkedin");
 
+let Profile_About_DOM = document.querySelector("#Profile_About");
+
 function Update(){
     Profile_IMG_DOM.src = profile.bio.portrait;
     Profile_Name_DOM.innerHTML = `${profile.bio.first} ${profile.bio.last}`;
@@ -58,7 +60,12 @@ function Update(){
     Profile_Facebook_DOM.href = profile.social.facebook;
     Profile_Twitter_DOM.href = profile.social.X;
     Profile_Youtube_DOM.href = profile.social.youtube;
-    Profile_Linkedin_DOM.href = profile.social.linkedIn;
+    Profile_Linkedin_DOM.href = profile.social.LinkedIn;
+
+    Profile_About_DOM.innerHTML = `<div class="text-start mb-1-6 wow fadeIn">
+							<h2 class="h1 mb-0 text-primary">#About Me</h2>
+						</div> ${profile.bio.about}`;
+
 }
 
 Update();
