@@ -12,12 +12,12 @@ var profile = {
         about: "Enrique A. Fonseca Porras is a Spanish journalist, political and economic analyst, and digital media creator. He is best known as the co-founder and former presenter of VisualPolitik, a widely influential Spanish-language YouTube channel that explains global politics and economics to mass audiences. Trained in journalism, Fonseca also worked earlier as a political marketing consultant, gaining firsthand experience in electoral communication and strategy.<br>After leaving VisualPolitik in 2023 due to internal differences, he launched his independent channel Solo Fonseca, where he continues producing political commentary and analysis with a more personal and direct style. He has also co-authored the book El método Podemos (2015), analyzing modern political marketing. Today, Fonseca is recognized as one of the most prominent Spanish-speaking political communicators on digital platforms."
     }, 
 
-    social: [
-        { facebook: "https://www.facebook.com/fonseca"},
-        { X: "https://x.com/Sr_Fonseca" },
-        { youtube: "https://www.youtube.com/channel/UCTqb7oZzCYpzOhPenq6AOyQ" },
-        { linkedIn: "Unknown" }
-    ],
+    social: {
+        facebook: "https://www.facebook.com/fonseca",
+        X: "https://x.com/Sr_Fonseca",
+        youtube: "https://www.youtube.com/channel/UCTqb7oZzCYpzOhPenq6AOyQ",
+        LinkedIn: "Unknown" 
+    },
     edu: {
         name: "University of Valladolid",
         major: "Journalism"
@@ -55,10 +55,10 @@ function Update(){
     Profile_Phone_DOM.innerHTML = `<i class="fas fa-mobile-alt display-25 me-3 text-secondary"></i>${profile.bio.phone}`;
     Profile_Address_DOM.innerHTML = `<i class="fas fa-map-marker-alt display-25 me-3 text-secondary"></i>${profile.bio.address}`;
 
-    Profile_Facebook_DOM.href = social.bio.facebook;
-    Profile_Twitter_DOM.href = social.bio.X;
-    Profile_Youtube_DOM.href = social.bio.youtube;
-    Profile_Linkedin_DOM.href = social.bio.linkedIn;
+    Profile_Facebook_DOM.href = profile.social.facebook;
+    Profile_Twitter_DOM.href = profile.social.X;
+    Profile_Youtube_DOM.href = profile.social.youtube;
+    Profile_Linkedin_DOM.href = profile.social.linkedIn;
 }
 
 Update();
