@@ -98,7 +98,7 @@ function Update() {
 
   Profile_Experience_Container_DOM.innerHTML = "";
 
-  Profile_Experience_DOM.innerHTML = `${profile.career.company}<br>${profile.career.title}<br>${profile.career.role}`;
+  Profile_Career_DOM.innerHTML = `${profile.career.company}<br>${profile.career.title}<br>${profile.career.role}`;
 
   Profile_Skill_Info_DOM.innerHTML = profile.skills_info;
 
